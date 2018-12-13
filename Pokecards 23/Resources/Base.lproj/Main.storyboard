@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TG5-mk-M1b">
+    <device id="ipad11_0rounded" orientation="portrait">
+        <adaptation id="splitview2_3"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Cards Table View Controller-->
+        <scene sceneID="hGs-KX-8QU">
+            <objects>
+                <tableViewController id="e1J-5h-RZ3" customClass="CardsTableViewController" customModule="Pokecards_23" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="525" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ks7-2V-lz3">
+                        <rect key="frame" x="0.0" y="0.0" width="504" height="1194"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="pokeCell" rowHeight="525" id="CUt-qG-HhU" customClass="PokemonCardTableViewCell" customModule="Pokecards_23" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="504" height="525"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CUt-qG-HhU" id="4c2-ea-Uah">
+                                    <rect key="frame" x="0.0" y="0.0" width="504" height="524.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Yjf-SA-rLa">
+                                            <rect key="frame" x="8" y="8" width="488" height="508.5"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Yjf-SA-rLa" firstAttribute="top" secondItem="4c2-ea-Uah" secondAttribute="top" constant="8" id="G1R-sq-IAN"/>
+                                        <constraint firstAttribute="bottom" secondItem="Yjf-SA-rLa" secondAttribute="bottom" constant="8" id="VaZ-xQ-ijS"/>
+                                        <constraint firstAttribute="trailing" secondItem="Yjf-SA-rLa" secondAttribute="trailing" constant="8" id="d0N-cc-fhC"/>
+                                        <constraint firstItem="Yjf-SA-rLa" firstAttribute="leading" secondItem="4c2-ea-Uah" secondAttribute="leading" constant="8" id="nIG-8y-iUi"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="pokemonCardImageView" destination="Yjf-SA-rLa" id="6pa-h8-kQZ"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="e1J-5h-RZ3" id="wkc-82-xAI"/>
+                            <outlet property="delegate" destination="e1J-5h-RZ3" id="L1u-T5-DuA"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="tsL-PW-lHi"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HHO-Av-ChR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="888" y="156"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ha3-Pj-sJQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TG5-mk-M1b" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="p8I-TK-auU">
+                        <rect key="frame" x="0.0" y="24" width="504" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="e1J-5h-RZ3" kind="relationship" relationship="rootViewController" id="KSK-g9-Y3m"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k3V-J7-We2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="66.400000000000006" y="150.67466266866569"/>
+        </scene>
+    </scenes>
+</document>

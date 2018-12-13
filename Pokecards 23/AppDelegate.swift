@@ -16,6 +16,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        PokemonCardController.fetchCards(searchTerm: "pikachu") { (pokemonCard) in
+            
+            guard let cards = pokemonCard else {return}
+            guard let firstCard = cards.first else {return}
+            
+            PokemonCardController.fetchPokemonImage(with: firstCard, completion: { (image) in
+                guard let image = image else {return}
+                print(image.pngData())
+            })
+                
+           
+        }
+        
         return true
     }
 
